@@ -92,9 +92,9 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  opacity: 0;
+  /* opacity: 0; */
 
-  @keyframes appear {
+  /* @keyframes appear {
     from {
       opacity: 0;
     }
@@ -105,7 +105,7 @@ const Nav = styled.nav`
   animation-name: appear;
   animation-duration: 500ms;
   animation-timing-function: ease-in;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; */
 `;
 
 const NavLink = styled.a`
@@ -114,10 +114,40 @@ const NavLink = styled.a`
   text-decoration: none;
   font-size: 1.125rem;
   text-transform: uppercase;
+  opacity: 0;
+
+  @keyframes appear-single {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   &:first-of-type {
     color: var(--color-secondary);
   }
+
+  &:nth-of-type(1) {
+    animation: appear-single 200ms ease-in-out 0.2s forwards;
+  }
+  &:nth-of-type(2) {
+    animation: appear-single 200ms ease-in-out 0.4s forwards;
+  }
+  &:nth-of-type(3) {
+    animation: appear-single 200ms ease-in-out 0.6s forwards;
+  }
+  &:nth-of-type(4) {
+    animation: appear-single 200ms ease-in-out 0.8s forwards;
+  }
+  &:nth-of-type(5) {
+    animation: appear-single 200ms ease-in-out 1s forwards;
+  }
+  &:nth-of-type(6) {
+    animation: appear-single 200ms ease-in-out 1.2s forwards;
+  }
+
 `;
 
 const Filler = styled.div`
