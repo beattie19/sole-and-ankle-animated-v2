@@ -70,7 +70,7 @@ const Content = styled(Dialog.Content)`
   display: flex;
   flex-direction: column;
 
-  @keyframes slideIn {
+  /* @keyframes slideIn {
     from {
       transform: translateX(100%);
     }
@@ -78,7 +78,20 @@ const Content = styled(Dialog.Content)`
       transform: translateX(0);
     }
   }
-  animation: slideIn 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  animation: slideIn 500ms cubic-bezier(0.19, 1, 0.22, 1); */
+
+  @keyframes doorClose {
+    from {
+      transform: rotateY(180deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  perspective: 250px;
+  transform-origin: right;
+
+  animation: doorClose 2000ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
 `;
 
 const CloseButton = styled(UnstyledButton)`
