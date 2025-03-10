@@ -142,6 +142,7 @@ const NavLink = styled.a`
     color: var(--color-secondary);
   }
 
+  // Change to use index?
   &:nth-of-type(1) {
     animation: appear-single 200ms ease-in-out 0.2s forwards;
   }
