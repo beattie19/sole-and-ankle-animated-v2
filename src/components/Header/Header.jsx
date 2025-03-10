@@ -20,12 +20,12 @@ const Header = () => {
           <Logo />
         </LogoWrapper>
         <DesktopNav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
+          <NavLink href="/sale"><span>Sale</span><span><strong>Sale</strong></span></NavLink>
+          <NavLink href="/new"><span>New&nbsp;Releases</span><span><strong>New&nbsp;Releases</strong></span></NavLink>
+          <NavLink href="/men"><span>Men</span><span><strong>Men</strong></span></NavLink>
+          <NavLink href='/women'><span>Women</span><span><strong>Women</strong></span></NavLink>
+          <NavLink href="/kids"><span>Kids</span><span><strong>Kids</strong></span></NavLink>
+          <NavLink href="/collections"><span>Collections</span><span><strong>Collections</strong></span></NavLink>
         </DesktopNav>
         <MobileActions>
           <ShoppingBagButton>
@@ -71,10 +71,36 @@ const MainHeader = styled.div`
   }
 `;
 
+
+const NavLink = styled.a`
+  display: flex;
+  flex-direction: column;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-gray-900);
+  font-weight: ${WEIGHTS.medium};
+  transition: transform 150ms;
+  transform: translateY(0);
+
+  &:first-of-type {
+    color: var(--color-secondary);
+  }
+`;
+
 const DesktopNav = styled.nav`
   display: flex;
   gap: clamp(1rem, 9.2vw - 4.5rem, 3.5rem);
   margin: 0px 48px;
+  height: 28px;
+  overflow: hidden;
+
+  ${NavLink} {
+    &:hover {
+    transition: transform 150ms;
+    transform: translateY(-100%);
+    }
+  }
 
   @media ${QUERIES.tabletAndSmaller} {
     display: none;
@@ -114,16 +140,5 @@ const Filler = styled.div`
   }
 `;
 
-const NavLink = styled.a`
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: var(--color-gray-900);
-  font-weight: ${WEIGHTS.medium};
-
-  &:first-of-type {
-    color: var(--color-secondary);
-  }
-`;
 
 export default Header;
