@@ -46,6 +46,16 @@ const Overlay = styled(Dialog.Overlay)`
   position: fixed;
   inset: 0;
   background: var(--color-backdrop);
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  animation: fadeIn 250ms ease-in-out;
 `;
 
 const Content = styled(Dialog.Content)`
@@ -59,6 +69,16 @@ const Content = styled(Dialog.Content)`
   padding: 24px 32px;
   display: flex;
   flex-direction: column;
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  animation: slideIn 500ms cubic-bezier(0.19, 1, 0.22, 1);
 `;
 
 const CloseButton = styled(UnstyledButton)`
@@ -72,6 +92,20 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  opacity: 0;
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  animation-name: appear;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 `;
 
 const NavLink = styled.a`
@@ -95,6 +129,19 @@ const Footer = styled.footer`
   flex-direction: column;
   gap: 14px;
   justify-content: flex-end;
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  animation-name: appear;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 `;
 
 const SubLink = styled.a`
